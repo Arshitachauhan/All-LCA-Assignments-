@@ -1,0 +1,35 @@
+def main():
+    student_records = {
+        101: {"Name": "Alice", "Branch": "Computer Science", "Marks": [85, 90, 88]},
+        102: {"Name": "Bob", "Branch": "Mechanical", "Marks": [78, 82, 80]},
+        103: {"Name": "Charlie", "Branch": "Electrical", "Marks": [92, 88, 95]}
+    }
+
+    print("Initial Student Records:")
+    for roll, details in student_records.items():
+        print(f"Roll No: {roll}, Details: {details}")
+
+    print("\n1. Adding a new student record (Roll No: 104)...")
+    new_roll = 104
+    student_records[new_roll] = {
+        "Name": "Diana",
+        "Branch": "Civil",
+        "Marks": [75, 80, 85]
+    }
+
+    print("\n2. Updating the details of an existing student (Roll No: 102)...")
+    if 102 in student_records:
+        student_records[102]["Marks"] = [82, 85, 87]
+        student_records[102]["Branch"] = "Mechatronics"
+
+    print("\n3. Deleting an existing student record (Roll No: 101)...")
+    if 101 in student_records:
+        del student_records[101]
+
+    print("\nFinal Student Records After All Operations:")
+    for roll, details in student_records.items():
+        student_tuple = (roll, details["Name"], details["Branch"], details["Marks"])
+        print(f"Roll Number: {student_tuple[0]} | Name: {student_tuple[1]} | Branch: {student_tuple[2]} | Marks: {student_tuple[3]}")
+
+if __name__ == "__main__":
+    main()
